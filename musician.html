@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <title>HTML STRUCTURE</title>
+<body>
+<h1>Musician guess by Soumya Sri Gurram</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="Secret Musician">Enter the secret  musician name </label>
+    <input type ="password" id="Musician"  min=10 max=50 step=2 value="John Lennon"> <br>
+
+    <label for="Guessing">Guess the musician </label>
+    <input type ="text" id="Guessing name"  autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Get values from form">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+var correct=0;
+var wrong=0;
+function checkGuess(){
+     m=document.getElementById("Musician").value;
+     g=document.getElementById("Guessing name").value;
+  if(m===g)
+  {
+    correct+=1;
+    alert("You got it right");
+ }
+ else
+ {
+    wrong+=1;
+ alert("Wrong Musician");
+}
+document.getElementById("result").innerHTML="correct num:"+correct+","+" wrong number:"+wrong;
+}
+</script>
+
+</body>
+</html> 
