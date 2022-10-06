@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h1> Soumya Sri Gurram computes discounts</h1>
+
+<form>
+    <label for="base_amount">Enter base amount</label>
+    <input type ="number" id="base_amount" name="base_amount" value=20> <br>
+
+    <label for="dicount_element">Enter the discount percentage</label>
+    <input type ="number" id="discount_element" name="dicount_element" value=10> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount ">
+</form>
+<p id="result">The text will be replaced </p><br>
+<form>
+<input  type ="radio" id="amount" name="form" onclick="chooseOp()" > 
+<label for="form_amount">*</label><br>
+
+<input onclick="chooseOp()" type ="radio" id="divide" name="divide" > 
+<label for="form_divide">/</label><br>
+
+<input onclick="chooseOp()" type ="radio" id="exponent" name="exponent"> 
+<label for="form_exponent">**</label><br>
+</form>
+
+<p id="results"></p>
+
+<script> 
+
+function discount(){
+    let basevalue=document.getElementById("base_amount").value;
+    let discount=document.getElementById("discount_element").value;
+    let result="";
+    base=basevalue-(basevalue*discount/100);
+    for(i=1;i<=5;i++)
+    {
+        
+        result+=base*i+"  ";
+    }
+    document.getElementById("result").innerHTML="Discounted values for base "+basevalue+" are "+result;
+
+    
+}
+function chooseOp()
+    {
+        let basevalue=document.getElementById("base_amount").value;
+        console.log("hii")
+        let result;
+    let discount=document.getElementById("discount_element").value;
+    if(document.getElementById("amount").checked)
+    {
+        result=basevalue*discount;
+
+    }
+    else if(document.getElementById("divide").checked)
+    {
+        result=basevalue/discount;
+    }
+    else if(document.getElementById("exponent").checked)
+    {
+        result=basevalue ** discount;
+    }
+    document.getElementById("results").innerHTML="The Result is : "+result;
+          
+    }
+</script>
+
+</body>
+</html>
+ 
